@@ -1,0 +1,30 @@
+<svg class="nala-avatar" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="42" cy="42" r="42" fill="#E6F0FF"></circle>
+  <!-- Head -->
+  <ellipse cx="42" cy="46" rx="19" ry="22" fill="#FFD6A6"></ellipse>
+  <!-- Hair (simple, stylized) -->
+  <path d="M23 44 Q20 24 42 20 Q64 24 61 44 Q57 32 42 32 Q27 32 23 44Z" fill="#165077"></path>
+  <!-- Neck -->
+  <rect x="37" y="60" width="10" height="10" rx="5" fill="#FFD6A6"></rect>
+  <!-- Body/shirt -->
+  <rect x="27" y="68" width="30" height="13" rx="7" fill="#42C5F6"></rect>
+  <!-- Eyes -->
+  <ellipse cx="35" cy="49" rx="2" ry="2.5" fill="#255E95"></ellipse>
+  <ellipse cx="49" cy="49" rx="2" ry="2.5" fill="#255E95"></ellipse>
+  <!-- Smile -->
+  <path d="M36 56 Q42 61 48 56" stroke="#207547" stroke-width="2" fill="none" stroke-linecap="round"></path>
+  <!-- Glasses, more style -->
+  <ellipse cx="35" cy="49" rx="5" ry="3.3" stroke="#255E95" stroke-width="2" fill="none"></ellipse>
+  <ellipse cx="49" cy="49" rx="5" ry="3.3" stroke="#255E95" stroke-width="2" fill="none"></ellipse>
+  <rect x="40" y="49" width="4" height="1" fill="#255E95"></rect>
+  <!-- Cheek blush for friendly look -->
+  <ellipse cx="32" cy="53" rx="1.5" ry="0.7" fill="#FFBAB6" opacity="0.7"></ellipse>
+  <ellipse cx="52" cy="53" rx="1.5" ry="0.7" fill="#FFBAB6" opacity="0.7"></ellipse>
+  <!-- Earphones for "coach" vibe -->
+  <circle cx="24" cy="54" r="3" fill="#255E95"></circle>
+  <circle cx="60" cy="54" r="3" fill="#255E95"></circle>
+  <rect x="21" y="53" width="3" height="2" rx="1" fill="#fff" opacity="0.8"></rect>
+  <rect x="60" y="53" width="3" height="2" rx="1" fill="#fff" opacity="0.8"></rect>
+  <!-- Microphone line -->
+  <path d="M61 54 Q65 62 55 60" stroke="#255E95" stroke-width="1.2" fill="none"></path>
+</svg>
