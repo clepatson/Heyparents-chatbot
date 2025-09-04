@@ -17,7 +17,12 @@ Er basiert auf der **WattOS KI Multi-Agenten-Plattform** und verbindet Text- & S
 4. **Parallele Streams** – Text (Tokenbuffer) & Audio (TTS)  
 5. **Externe Integrationen** – Zugriff via REST + WebSockets  
 
-### Frontend (dieses Projekt)
+## 🔄 Architekturfluss
+
+Eingabe → Agent → Charakter → Text + Audio
+
+👉 Siehe [Architekturfluss (PDF)](Skizzirung.drawio.pdf)
+
 
 
 ---
