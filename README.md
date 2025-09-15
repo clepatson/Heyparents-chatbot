@@ -69,6 +69,58 @@ POST /v1/artifacts/add_file → Datei-Upload   --------> Optional
 
 
 
+### Airtable-Integration
+Damit könnten wir den Chatbot direkt mit unseren Daten arbeiten lassen, z. B. Elternprofile, Kursanmeldungen oder Statusinformationen. Ich habe mir dazu einen möglichen Workflow überlegt:
+
+## 1. Ziel
+Eltern sollen nicht nur Fragen stellen können, sondern der Bot kann live aus unserer Airtable-Datenbank antworten (z. B. „Bin ich schon registriert?“ oder „Welchen Status habe ich?“).
+Optional kann der Bot auch Daten aktualisieren („Bitte setze mich auf ‚qualified‘“).
+
+
+
+Airtable wird als Tool eingebunden: entweder über eine -->Built-in Integration (falls verfügbar) oder als -->Custom-Tool (kleiner API-Wrapper).
+
+
+
+### 1.1 Built-in Integration (falls verfügbar)--> ohne eigenen Code , nur Konfiguration ( Mapping )
+über die Oberfläche https://chatbot.omniratio.de/ui/   ----------> Oben ins Menü → Kontoeinstellungen (oder manchmal ein eigener Tab „Integrationen hinzufügen“). ------------->   Dort solltest du „Integration hinzufügen“ oder speziell „Airtable“ sehen.
+
+Eingabe
+
+| Required      | Werte                  |
+|:-----------|:------------------------|
+| API Key    | aus Airtable       |
+| Base ID | aus Airtable    |
+| Tabelle(n)_Namen | aus Airtable       |
+| Optional: erlaubte Felder | (Name, Email, Status …) |
+
+
+.Speichern → die Plattform registriert automatisch fertige Tools (z. B. airtable.search, airtable.update).
+
+.Danach gehst du zu Charaktere, wählst „Nala“ und aktivierst die Tools für diesen Charakter.
+
+
+1.Der Character „Nala“ bekommt Zugriff auf diese Tools und kann sie automatisch aufrufen.
+Character-Prompt (System)
+
+Beispiel :
+
+„Du bist Nala, der HeyParents-Coach.
+Wenn Eltern nach Kursen, Anmeldungen, Status oder Kontakt fragen, nutze zuerst airtable_search_parents mit passender Query (Name/E-Mail). Wenn Status angepasst werden soll, nutze airtable_update_parent_status.
+Erkläre jede Änderung freundlich und bestätige die Ergebnisse kurz. Antworte in der Sprache der Nutzeranfrage.“
+
+
+
+## Workflow-Beispiel
+
+User: „Kannst du mir sagen, ob wir für marta@beispiel.de
+ schon Kontakt hatten?“
+
+Nala: ruft airtable_search_parents({ query: "marta@beispiel.de" }) → antwortet mit Ergebnis + (Audio).
+
+User: „Stell sie bitte auf qualified.“
+
+Nala: ruft airtable_update_parent_status({ recordId:"rec123", status:"qualified" }) → bestätigt mit Ergebnis + (Audio).
 
 
 
@@ -76,11 +128,4 @@ POST /v1/artifacts/add_file → Datei-Upload   --------> Optional
 
 
 
-
-
-
-
-
-
-
-
+### 1.2 Custom-Tool (kleiner API-Wrapper).
